@@ -1,0 +1,49 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<style>
+		body {
+			margin: 0;
+			background-color: #012;
+			color: #CEF;
+		}
+
+		.panel {
+			float: left;
+			border: solid 1px;
+			width: 70%;
+			height: 99%;
+		}
+
+		.panel.right {
+			width: 28%;
+		}
+
+    span.panel {
+      display: block;
+    }
+	</style>
+	<script src='https://meet.jit.si/external_api.js'></script>
+</head>
+
+<body>
+	<iframe class="panel left" src="https://replit.com/@ceilingrat/git-good?embed=true"></iframe>
+	<span class="panel right"></span>
+  <script>
+    var oMeetOptions = {
+      height : "100%",
+      parentNode : document.querySelector("span.panel.right"),
+      roomName : "ceilingrat-foo"
+    };
+    var oMeetAPI // = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
+  </script>
+  <br clear="all">
+  <a href="javascript:void (oMeetOptions.roomName = prompt('edit room name',oMeetOptions.roomName));">change room name</a><br>
+  <a href="javascript:void (oMeetAPI = new JitsiMeetExternalAPI( 'meet.jit.si', oMeetOptions));">launch meeting</a><br>
+  <input type="password" id="streamkey" value ="re_2883045_1402f17d57879cb68ad8" size="30"></input>
+  <input type="text" id="streamID" value="foobar-1" size="15"></input>
+  <a href="javascript:void ( console.log( oMeetAPI.executeCommand('startRecording', { mode : 'stream', rtmpStreamKey : 'rtmp://live.restream.io/live/' + streamkey.value, rtmpBroadcastID: streamID.value }) ))">start stream</a><br>
+  <a href="javascript:void ( console.log( oMeetAPI.executeCommand('startRecording', { mode : 'stream' }) ))">end stream</a>
+  </body>
+</html>
