@@ -1,0 +1,17 @@
+[[package]]
+name = "asciinema"
+version = "2.0.2"
+description = "Terminal session recorder"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "7ea52d2094728aead8fc8a01ba48244f1ef8f8865cebee16970f5aafb8f29ff4"
+
+[metadata.files]
+asciinema = [
+    {file = "asciinema-2.0.2.tar.gz", hash = "sha256:32f2c1a046564e030708e596f67e0405425d1eca9d5ec83cd917ef8da06bc423"},
+]

@@ -1,0 +1,5 @@
+# ignore directories inserted by package managers
+.bundle
+# ignore directories created by jekyll cms
+_*/
+**/_*
