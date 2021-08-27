@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TODAY=$(TZ="/usr/share/zoneinfo/Japan" date "+%Y-%m-%d")
+
+LOGDIR=./
+
+COUNT=$(find $LOGDIR -iname "*$TODAY*" | wc -l)
+
+NAMEPRE=$(printf "$TODAY-%02d-" $COUNT)
+
+NAME=${NAMEPRE}$1
+
+touch $NAME
