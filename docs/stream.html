@@ -4,11 +4,56 @@
 	<meta charset="utf-8">
 	<style>
 		body {
-			margin: 0;
+			// margin: 0;
 			background-color: #012;
 			color: #CEF;
 		}
+      .primary {
+        border: solid 1px;
+        height: 100%;
+      }
+      .secondary {
+        border: dashed 1px;
+      }
+      .presentation {
+        color: blue;
+        float: right;
+        width: 400px;
+        // width: 31%;
+      }
+      .editor {
+        color: green;
+        width: 65%;
+      }
+      .editor .secondary {
+        height: 100%;
+      }
+      .editor .secondary iframe {
+        width: 100%;
+        height: 100%;
+      }
+      .slides {
+        // display: none;
+        color: pink;
+        height: 33%;
+      }
+      .slides iframe {
+        width: 100%;
+        height: 100%;
+      }
+      .meeting {
+        color: purple;
+        height: 66%;
+      }
+      .shared {
+        color: red;
+      }
+      .solo {
+        display: none;
+        color: orange;
+      }
 
+/*
 		.panel {
 			float: left;
 			border: solid 1px;
@@ -23,29 +68,46 @@
     span.panel {
       display: block;
     }
+    */
 	</style>
 	<script src='https://meet.jit.si/external_api.js'></script>
 </head>
 
 <body>
-	<iframe class="panel left" src="https://replit.com/@ceilingrat/git-good?embed=true"></iframe>
-	<span class="panel right"></span>
-  <script>
-    var oMeetOptions = {
-      height : "100%",
-      parentNode : document.querySelector("span.panel.right"),
-      roomName : "ceilingrat-foo"
-    };
-    var oMeetAPI // = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
-  </script>
+  <section class="primary presentation">
+    <section class="secondary slides">
+      <iframe src="slides.html"></iframe>
+    </section>
+    <section class="secondary meeting">
+    </section>
+    <script>
+        var oMeetOptions = {
+          height : "100%", 
+          parentNode : document.querySelector(".meeting"),
+          roomName : "ceilingrat-foo"
+        };
+        var oMeetAPI // = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
+    </script>
+  </section>
+  <section class="primary editor">
+    <section class="secondary shared">
+      <iframe  src="https://replit.com/@ceilingrat/git-good?embed=true"></iframe>
+    </section>
+    <section class="secondary solo">
+      &nbsp;
+    </section>
+  </section>
+
   <br clear="all">
   <a href="javascript:void (oMeetOptions.roomName = prompt('edit room name',oMeetOptions.roomName));">change room name</a><br>
   <a href="javascript:void (oMeetAPI = new JitsiMeetExternalAPI( 'meet.jit.si', oMeetOptions));">launch meeting</a><br>
   <input type="password" id="streamkey" value ="re_2883045_1402f17d57879cb68ad8" size="30"></input>
-  <input type="text" id="streamID" value="foobar-1" size="15"></input>
+  <input type="text" id="streamID" value="foobar-1" size="15"></input>with
   <a href="javascript:void ( console.log( oMeetAPI.executeCommand('startRecording', { mode : 'stream', rtmpStreamKey : 'rtmp://live.restream.io/live/' + streamkey.value, rtmpBroadcastID: streamID.value }) ))">start stream</a><br>
   <a href="javascript:void ( console.log( oMeetAPI.executeCommand('startRecording', { mode : 'stream' }) ))">end stream</a>
+
   <br clear="all">
   <iframe src="https://excalidraw.com/#room=814b8df86ac50712f57d,GkHKKTBMAKyE2RhDJ_gDeQ" style="width:75%; height:98%;"></iframe>
+
   </body>
 </html>

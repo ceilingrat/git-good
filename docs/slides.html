@@ -15,9 +15,18 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+			<div class="slides r-fit-text">
+        <section class="r-fit-text">
+          <section>Slide 1.1</section>
+  				<section>Slide 1.2</section>
+        </section>
+        <section>
+          <section>Slide 2.1</section>
+  				<section>Slide 2.2</section>
+        </section>
+        <section>
+          <strong class="r-fit-text">How about this?</strong>
+        </section>
 			</div>
 		</div>
 
@@ -31,6 +40,8 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+
+        navigationMode: "grid",
 
         multiplex: {
           // Example values. To generate your own, see the socket.io server instructions.
