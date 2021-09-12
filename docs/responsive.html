@@ -6,6 +6,11 @@
       html {
         background-color: #555;
       }
+      body {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        min-width: 900px;
+      }
       .primary {
         border: solid 1px;
         height: 100%;
@@ -15,19 +20,23 @@
       }
       .presentation {
         color: blue;
-        float: right;
-        width: 400px;
-        // width: 31%;
+        min-width: 36%;
+        display: flex;
+        flex-direction: column;
       }
       .editor {
         color: green;
-        width: 65%;
+        width: 70%;
       }
       .slides {
         color: pink;
+        height: 45%; 
       }
       .meeting {
-        color: purple;
+        color: violet;
+        height: 54%;
+        width: 80%;
+        align-self: flex-end;
       }
       .shared {
         color: red;
@@ -40,18 +49,18 @@
   <body>
     <section class="primary presentation">
       <section class="secondary slides">
-        &nbsp;
+        1 &nbsp;
       </section>
       <section class="secondary meeting">
-        &nbsp;
+        2 &nbsp;
       </section>
     </section>
     <section class="primary editor">
       <section class="secondary shared">
-        &nbsp;
+        3 &nbsp;
       </section>
       <section class="secondary solo">
-        &nbsp;
+        4 &nbsp;
       </section>
     </section>
   </body>

@@ -7,51 +7,55 @@
 			// margin: 0;
 			background-color: #012;
 			color: #CEF;
-		}
-      .primary {
-        border: solid 1px;
-        height: 100%;
-      }
-      .secondary {
-        border: dashed 1px;
-      }
-      .presentation {
-        color: blue;
-        float: right;
-        width: 400px;
-        // width: 31%;
-      }
-      .editor {
-        color: green;
-        width: 65%;
-      }
-      .editor .secondary {
-        height: 100%;
-      }
-      .editor .secondary iframe {
-        width: 100%;
-        height: 100%;
-      }
-      .slides {
-        // display: none;
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      min-width: 900px;
+		}  
+    .primary {
+      border: solid 1px;
+      height: 100%;
+    }
+    .secondary {
+      border: dashed 1px;
+    }
+    .presentation {
+      color: blue;
+      min-width: 36%;
+      display: flex;
+      flex-direction: column;
+    }
+    .editor {
+      color: green;
+      width: 70%;
+    }
+    .editor .secondary {
+      height: 100%;
+    }
+    .editor .secondary iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .slides {
         color: pink;
-        height: 33%;
-      }
-      .slides iframe {
-        width: 100%;
-        height: 100%;
-      }
-      .meeting {
-        color: purple;
-        height: 66%;
-      }
-      .shared {
-        color: red;
-      }
-      .solo {
-        display: none;
-        color: orange;
-      }
+        height: 45%; 
+    }
+    .slides iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .meeting {
+      color: violet;
+      height: 54%;
+      width: 80%;
+      align-self: flex-end;
+    }
+    .shared {
+      color: red;
+    }
+    .solo {
+      display: none;
+      color: orange;
+    }
 
 /*
 		.panel {
@@ -84,9 +88,9 @@
         var oMeetOptions = {
           height : "100%", 
           parentNode : document.querySelector(".meeting"),
-          roomName : "ceilingrat-foo"
+          roomName : "ceilingrat-foobar-1"
         };
-        var oMeetAPI // = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
+        var oMeetAPI = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
     </script>
   </section>
   <section class="primary editor">
@@ -97,7 +101,7 @@
       &nbsp;
     </section>
   </section>
-
+<!--
   <br clear="all">
   <a href="javascript:void (oMeetOptions.roomName = prompt('edit room name',oMeetOptions.roomName));">change room name</a><br>
   <a href="javascript:void (oMeetAPI = new JitsiMeetExternalAPI( 'meet.jit.si', oMeetOptions));">launch meeting</a><br>
@@ -108,6 +112,6 @@
 
   <br clear="all">
   <iframe src="https://excalidraw.com/#room=814b8df86ac50712f57d,GkHKKTBMAKyE2RhDJ_gDeQ" style="width:75%; height:98%;"></iframe>
-
+-->
   </body>
 </html>
