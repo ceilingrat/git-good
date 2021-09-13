@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<style>
 		body {
-			// margin: 0;
+			margin: 0;
 			background-color: #012;
 			color: #CEF;
       display: flex;
@@ -12,17 +12,56 @@
       min-width: 900px;
 		}  
     .primary {
-      border: solid 1px;
+      border: none;
+//      border: solid 1px;
       height: 100%;
     }
     .secondary {
-      border: dashed 1px;
+      border: none;
+//      border: dashed 1px;
     }
     .presentation {
       color: blue;
       min-width: 36%;
       display: flex;
-      flex-direction: column;
+      flex-flow: row-reverse wrap;
+      justify-items: stretch;
+      justify-content: space-between;
+    }
+    .slides {
+      flex-basis: 100%;
+      color: pink;
+      height: 45%; 
+    }
+    .slides iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .controls {
+      width: 85px;
+    }
+    .controlset {
+      position: absolute;
+      bottom: 5px;
+      height: 150px;
+    }
+    .controlset button {
+      display: block;
+      width: 75px;
+      height: 75px;
+      font-size: 60px;
+			background-color: #012;
+			color: #CEF;
+    }
+    .controlset button.active {
+      color: #012;
+			background-color: #CEF;
+      filter: drop-shadow(0 0 5px #CCF);
+    }
+    .meeting {
+      color: violet;
+      height: 54%;
+      min-width: 80%;
     }
     .editor {
       color: green;
@@ -34,20 +73,6 @@
     .editor .secondary iframe {
       width: 100%;
       height: 100%;
-    }
-    .slides {
-        color: pink;
-        height: 45%; 
-    }
-    .slides iframe {
-      width: 100%;
-      height: 100%;
-    }
-    .meeting {
-      color: violet;
-      height: 54%;
-      width: 80%;
-      align-self: flex-end;
     }
     .shared {
       color: red;
@@ -92,6 +117,12 @@
         };
         var oMeetAPI = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
     </script>
+    <section class="secondary controls">
+      <div class="controlset">
+        <button class="active">👥</button>
+        <button>👤</button>
+      </div>
+    </section>
   </section>
   <section class="primary editor">
     <section class="secondary shared">
