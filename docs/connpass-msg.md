@@ -1,0 +1,5 @@
+https://www.deepl.com/translator#en/ja/Hello%20everyone!%20I'm%20Brian%2C%20I'm%20one%20of%20the%20co-hosts%20of%20the%20Git%20Good%20event.%0A%0AIf%20you%20have%20signed%20up%20for%20our%20event%2C%20thank%20you%20so%20much!%0A%0A(%20If%20you%20have%20not%20signed%20up%20yet%2C%20I%20hope%20you'll%20consider%20it.%20)%0A%0ATo%20prepare%20for%20Friday's%20event%2C%20I'd%20like%20to%20speak%20to%20each%20of%20you%20individually%20to%20learn%20a%20bit%20about%20your%20language%20ability%20and%20what%20you'd%20like%20to%20learn%20from%20our%20event.%0A%0AMy%20Japanese%20ability%20is%20terrible%20so%20let's%20chat%20using%20Discord%20because%20I%20copy%20the%20text%20and%20use%20DeepL%20%F0%9F%98%85%0A%0AThe%20%22%23git-good%22%20Discord%20channel%20can%20be%20found%20here%3A%0Ahttps%3A%5C%2F%5C%2Fdiscord.com%5C%2Fchannels%5C%2F705718844400074784%5C%2F867987825247805470%0A%0APlease%20stop%20by%20the%20chat%20and%20introduce%20yourself.%0AI%20look%20forward%20to%20meeting%20you%20all!
+
+www.DeepL.com/Translator（無料版）で翻訳しました。
+
+https://bit.ly/3lkAJAm

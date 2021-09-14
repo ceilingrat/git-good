@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'EmojiOneColor';
+  src: url('EmojiOneColor.eot');
+  src: url('EmojiOneColor.eot?#iefix') format('embedded-opentype'),
+       url('EmojiOneColor.svg#EmojiOneColor') format('svg'),
+       url('EmojiOneColor.ttf') format('truetype'),
+       url('EmojiOneColor.woff') format('woff'),
+       url('EmojiOneColor.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
