@@ -45,18 +45,18 @@
 
         multiplex: {
           // Example values. To generate your own, see the socket.io server instructions.
-          secret: '1631670233928445767', 
-          // secret: '16310720474969970518', // Obtained from the socket.io server. Gives this (the master) control of the presentation
-          id: 'da195b108614cc41', 
-          // id: 'ab6a37f096ecfec4', // Obtained from socket.io server
-          url: 'https://untitled-zygoxl3fkcya.runkit.sh/'
-          // url: 'https://revealjs-multiplex-service.ceilingrat.repl.co/' // Location of socket.io server
+          // secret: '1631670233928445767', 
+          secret: '16310720474969970518', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+          // id: 'da195b108614cc41', 
+          id: 'ab6a37f096ecfec4', // Obtained from socket.io server
+          // url: 'https://untitled-zygoxl3fkcya.runkit.sh/'
+          url: 'https://revealjs-multiplex-service.ceilingrat.repl.co/' // Location of socket.io server
         },
 
         // Don't forget to add the dependencies
         dependencies: [
-          { src: 'https://untitled-zygoxl3fkcya.runkit.sh/socket.io/socket.io.js', async: true },
-          // { src: 'https://revealjs-multiplex-service.ceilingrat.repl.co/socket.io/socket.io.js', async: true },
+          // { src: 'https://untitled-zygoxl3fkcya.runkit.sh/socket.io/socket.io.js', async: true },
+          { src: 'https://revealjs-multiplex-service.ceilingrat.repl.co/socket.io/socket.io.js', async: true },
           { src: 'client.js', async: true }],
 
 				// Learn about plugins: https://revealjs.com/plugins/
