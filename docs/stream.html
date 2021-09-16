@@ -104,6 +104,11 @@
     }
     */
 	</style>
+  <script type="text/javascript">
+    var oParams = {}, oURLObj = (new URL(location)).searchParams.entries();
+    for ( var x of oURLObj ) oParams[ x[0] ] = x[1];
+    console.log( oParams );
+  </script>
 	<script src='https://meet.jit.si/external_api.js'></script>
 </head>
 

@@ -13,6 +13,6 @@ echo $testsecret
 # - run http server listening for public requests
 # - watch for changes to source files and generate new site files when necessary
 
-bundler exec jekyll s -s "docs" -H 0.0.0.0
+bundler exec jekyll s -s "docs" -H 0.0.0.0 --no-watch
 
 # if using 'run' button to activate jekyll, then other services and other scripts need to go into other script files
