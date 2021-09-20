@@ -16,8 +16,8 @@
       min-width: 900px;
 		}  
     .primary {
-      border: none;
-//      border: solid 1px;
+//      border: none;
+      border: solid 1px;
       height: 100%;
     }
     .secondary {
@@ -27,6 +27,7 @@
     .presentation {
       color: blue;
       min-width: 36%;
+      flex: 1;
       display: flex;
       flex-flow: row-reverse wrap;
       justify-items: stretch;
@@ -70,21 +71,34 @@
     }
     .editor {
       color: green;
-      width: 70%;
+      align-self: stretch;
+      flex: 2;
+      // width: 70%;
     }
     .editor .secondary {
+      // display: block;
       height: 100%;
     }
     .editor .secondary iframe {
       width: 100%;
       height: 100%;
     }
-    .shared {
+    section.shared {
+      // position: absolute;
       color: red;
-    }
-    .solo {
+      // top: 1px;
+      // left: 1px;
       display: none;
+    }
+    section.solo {
+      // position: absolute;
       color: orange;
+      // top: 1px;
+      // left: 1px;
+      display: none;
+    }
+    section.active {
+      display: block;
     }
 
 /*
@@ -105,6 +119,13 @@
     */
 	</style>
   <script type="text/javascript">
+  /*
+    -- Params List --
+    JitsiRoom
+    SlidesPath
+    EditorMultiFragment
+    EditorSoloFragment
+  */
     var oParams = {}, oURLObj = (new URL(location)).searchParams.entries();
     for ( var x of oURLObj ) oParams[ x[0] ] = x[1];
     console.log( oParams );
@@ -116,30 +137,57 @@
   <section class="primary presentation">
     <section class="secondary slides">
       <iframe src="slides.html"></iframe>
+      <script>
+        if ( "SlidesPath" in oParams ) document.querySelector(".slides iframe").src = oParams.SlidesPath;
+      </script>
     </section>
     <section class="secondary meeting">
     </section>
     <script>
+        var sRoomName = (( "JitsiRoom" in oParams )? oParams.JitsiRoom : "ceilingrat-foobar-1");
         var oMeetOptions = {
           height : "100%", 
           parentNode : document.querySelector(".meeting"),
-          roomName : "ceilingrat-foobar-1"
+          roomName : sRoomName
         };
         var oMeetAPI = new JitsiMeetExternalAPI( "meet.jit.si", oMeetOptions);
     </script>
     <section class="secondary controls">
       <div class="controlset">
-        <button class="active">👥</button>
-        <button>👤</button>
+        <button class="shared active" >👥</button>
+        <button class="solo" >👤</button>
+        <script>          
+          function fnButtonHandler ( oEvent ) {
+            var oSrcButton = oEvent.target;
+            if ( oSrcButton.classList.contains("active") ) return;
+            var sSrcClass = oSrcButton.classList[0];
+            [ "shared", "solo" ].forEach(
+              function ( sClass ) {
+                document.querySelectorAll("." + sClass).forEach(
+                  function ( oNode ) {
+                    oNode.classList[ ( (sClass == sSrcClass) ? "add" : "remove" ) ]("active");
+                  }
+                );
+              }
+            );
+          }
+          document.querySelectorAll(".controlset button").forEach( function(x) { x.onclick = fnButtonHandler; } );
+        </script>
       </div>
     </section>
   </section>
   <section class="primary editor">
-    <section class="secondary shared">
+    <section class="secondary shared active">
       <iframe  src="https://replit.com/@ceilingrat/git-good?embed=true"></iframe>
+      <script>
+        if ( "EditorMultiFragment" in oParams ) document.querySelector(".shared iframe").src = "https://replit.com/" + oParams.EditorMultiFragment + "?embed=true";
+      </script>
     </section>
     <section class="secondary solo">
-      &nbsp;
+      <iframe  src="https://replit.com/@dnrtc/EngCafeLogo?embed=true"></iframe>
+      <script>
+        if ( "EditorSoloFragment" in oParams ) document.querySelector(".shared iframe").src = "https://replit.com/" + oParams.EditorSoloFragment + "?embed=true";
+      </script>
     </section>
   </section>
 <!--
